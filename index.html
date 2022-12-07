@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Dice Game | COMP 2132 Final Project
+    </title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./scripts/jquery-3.6.1.min.js" defer></script>
+    <script src="./scripts/elements.js" defer></script>
+    <script src="./scripts/objects.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+<div id="wrapper">  
+    <header>
+        <h1 id="page-header">Dice Game</h1>
+    </header>
+    <main>
+        <div id="main" class="container">
+            <section class="board player">
+                <h2 id="player-name"></h2>
+                <div id="player-hand" class="hand">
+                    <img id="player-d1" class="die" src="./images/transparent-dice.png" alt="Player d1">
+                    <img id="player-d2" class="die" src="./images/transparent-dice.png" alt="Player d2">
+                </div>
+                <p id="player-round">This round: 0</p>
+                <p id="player-total">Total: 0</p>
+                <button  id="roll-player">Roll dice</button>
+                <div id="new" class="dialog">
+                    <label id="legend" for="name">Player 1: Enter name</label>
+                    <input type="text" id="name" name="name">
+                    <button style="cursor:pointer" class="submit">Let's roll!</button>
+                </div>
+            </section>
+            <section class="board computer">
+                <h2>The Master</h2>
+                <div id="comp-hand" class="hand">
+                    <img id="comp-d1" class="die" src="./images/transparent-dice.png" alt="CPU d1">
+                    <img id="comp-d2" class="die" src="./images/transparent-dice.png" alt="CPU d2">
+                </div>
+                <p id="comp-round">This round: 0</p>
+                <p id="comp-total">Total: 0</p>
+                <p id="dialogue">"Oh, dear, another dogged contender..."</p>
+            </section>
+            <section class="instructions">
+                <p>Players score points for the combined value of both dice with each roll.</p>
+                <p>If both dice display same number, player scores <strong>double</strong> the combined value.</p>
+                <p>If either die scores 1, player scores 0 for that roll.</p>
+                <p>The player with more points after three rolls wins the game.</p>
+            </section>
+    </div>
+    <div id="result" class="dialog">
+        <h2 id="greeting"></h2>
+        <p id="message"></p>
+        <button id="rematch"  class="submit">Rematch</button>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2022 Nick Farrell</p>
+    </footer>
+</div>
+</body>
+</html>

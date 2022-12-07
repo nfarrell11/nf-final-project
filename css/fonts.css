@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "public-sans-regular";
+    src: url('../fonts/PublicSans-Regular.woff2') format('woff2'),
+         url('../fonts/PublicSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "public-sans-bold";
+    src: url('../fonts/PublicSans-Bold.woff2') format('woff2'),
+         url('../fonts/PublicSans-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "spot-normal";
+    src: url('../fonts/Spot-Normal.woff2') format('woff2'),
+         url('../fonts/Spot-Normal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "barlow-regular";
+    src: url('../fonts/barlow-regular-webfont.woff2') format('woff2'),
+         url('../fonts/barlow-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,282 @@
+@import url(./fonts.css);
+@import url(./normalize.css);
+html {
+  box-sizing: border-box;
+  font-size: 1.15em;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --light-background:rgb(249,249,249);
+  --dark-background:rgb(220, 10, 55);
+  --light-color:rgb(249,249,249);
+  --dark-color: rgb(7,6,6);
+  --grey-color: rgb(195,195,195);
+  --almost-black: rgb(7,6,6);
+  --almost-white: rgb(249,249,249);
+  --content-gap: 16px;
+  --heading-font-face: "public-sans-regular";
+  --block-text-font-face: "barlow-regular";
+}
+
+body {
+  margin: 0;
+  font-family: var(--block-text-font-face);
+  color: var(--dark-color);
+}
+
+/* --- header/footer styles --- */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  z-index: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  color: var(--almost-white);
+}
+
+/* heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--almost-black);
+  text-shadow: 0.4px 0.4px var(--grey-color);
+  font-family: var(--block-text-font-face);
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.75em;
+  margin: 0px 0px 0px 0px;
+  font-family: var(--heading-font-face);
+  color: var(--almost-white);
+}
+
+h2, h3 {
+  text-align: center;
+  margin: 0px;
+  padding: 4px;
+  border-radius: 8px;
+  text-shadow: none;
+}
+
+/* --- main styles --- */
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(249, 249, 249, 0.85);
+  color: var(--almost-black);
+  width: 96%;
+  padding: 16px;
+  align-items: center;
+}
+
+section p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+img {
+  width: 72px;
+  height: auto;
+}
+
+a {
+  color: var(--medium-color);
+  text-decoration: none;
+}
+
+p {
+  margin: 8px 8px;
+}
+
+button {
+  cursor: pointer;
+  background-color: rgb(15, 85, 5);
+  color: var(--almost-white);
+  border: solid 1px var(--grey-color);
+  border-radius: 4px;
+  padding: 8px;
+  font-weight: bold;
+  display: inline-block;
+  width: 90px;
+}
+
+strong {
+  font-size: 120%;
+  color: purple;
+}
+
+input {
+  width: 66%;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* --- class selectors --- */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.dialog, #new, #result {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(249, 249, 249, 0.95);
+  align-items: center;
+  justify-content: space-around;
+  color: var(--almost-black);
+  font-size: 1.4em;
+  width: 240px;
+  height: 256px;
+  z-index: 1000;
+  border-radius: 8px;
+  position: fixed;
+  opacity: 0;
+}
+
+.hand {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.die {
+  max-width: 64px;
+  margin: 2px;
+}
+
+.shake {
+  animation: shake 0.5s infinite;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+/* --- id selectors --- */
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--almost-white);
+  background-image: url("../images/6.jpg");
+  background-size: cover;
+  max-width: 1720px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+#result {
+  background-color: gold;
+  color: var(--almost-black);
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: var(--content-gap);
+  width: 240px;
+  height: 330px;
+  top: 96px;
+  display: none;
+  z-index: 10;
+  border-radius: 8px;
+  position: absolute;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#result p {
+  text-align: center;
+  color: var(--almost-black);
+}
+
+/* --- media queries --- */
+@media screen and (min-width: 620px) {
+  section {
+    height: 440px;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .instructions p {
+    font-size: 110%;
+  }
+}
+@media screen and (min-width: 808px) {
+  .container {
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
+    grid-template-areas: "a b" "c c";
+    grid-auto-rows: 1fr auto;
+  }
+  section {
+    width: 100%;
+    margin: 0;
+  }
+  .board {
+    width: 280px;
+    height: 280px;
+  }
+  .instructions {
+    grid-column-start: span 2;
+    min-height: 0px;
+    height: auto;
+    padding: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section {
+    width: 100%;
+    min-height: 0px;
+    margin: 0;
+  }
+  .board {
+    max-width: 450px;
+    width: 450px;
+    height: 320px;
+  }
+  .board h2 {
+    padding-top: 16px;
+  }
+  .instructions {
+    grid-column-start: span 2;
+    min-height: 0px;
+    height: auto;
+    padding: 16px;
+    max-width: 1000px;
+  }
+}
