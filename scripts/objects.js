@@ -69,6 +69,7 @@ class Champion {
                         "",//na
                         "",//na
                         "",//na
+                        "",//na
                         "Haha!!"]//24 
     }
     talkTrash(index) {
